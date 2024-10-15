@@ -1,7 +1,7 @@
 {
-    "name": "Deep-Zebrafish-Bone-Strucutre-Segementation",
+    "name": "Deep-Zebrafish-Bone-Strucutre-Segementation_V",
     "container-image": {
-        "image": "navdeepkaushish/s_deep-zebrafish-bone-strcture-segmentation",
+        "image": "navdeepkaushish/s_deep-zebrafish-bone-strcture-segmentation_v",
         "type": "singularity"
     },
     "description": "Prediction phase of the Deep-bone Deep Learning approach",
