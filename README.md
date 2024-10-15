@@ -1,1 +1,1 @@
-# S_Deep-Segmentation-Zebrafish-Bone-Structures
+# S_Deep-Zebrafish-Bone-Structures-Segmentation
