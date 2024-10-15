@@ -1,0 +1,112 @@
+{
+    "name": "Deep-Fish-Landmark-Prediction",
+    "container-image": {
+        "image": "navdeepkaushish/s_deep-fish-landmark-prediction",
+        "type": "singularity"
+    },
+    "description": "Prediction phase of the Deep-fish Deep Learning approach",
+    "schema-version": "cytomine-0.1",
+    "command-line": "python run.py [CYTOMINE_HOST] [CYTOMINE_PUBLIC_KEY] [CYTOMINE_PRIVATE_KEY] [CYTOMINE_ID_PROJECT] [CYTOMINE_ID_SOFTWARE] [IMAGES_TO_PREDICT] [FISH_TYPE] [N_LANDMARKS] [MODEL_TO_USE] [MODEL_SIZE]",
+    "inputs": [
+        {
+        	"id": "cytomine_host",
+      		"value-key": "[@ID]",
+      		"command-line-flag": "--cytomine_host",
+      		"name": "Cytomine host",
+      		"set-by-server": true,
+      		"optional": false,
+      		"type": "String"
+    	},
+    	{
+			"id": "cytomine_public_key",
+			"value-key": "[@ID]",
+			"command-line-flag": "--@id",
+			"name": "Cytomine public key",
+			"set-by-server": true,
+			"optional": false,
+			"type": "String"
+    	},
+    	{
+    		"id": "cytomine_private_key",
+			"value-key": "[@ID]",
+			"command-line-flag": "--@id",
+			"name": "Cytomine private key",
+			"set-by-server": true,
+			"optional": false,
+			"type": "String"
+    	},
+		{
+			"id": "cytomine_id_project",
+			"value-key": "[@ID]",
+			"command-line-flag": "--@id",
+			"name": "Cytomine project ID",
+			"set-by-server": true,
+			"optional": false,
+			"type": "Number"
+    	},
+		{
+			"id": "cytomine_id_software",
+			"value-key": "[@ID]",
+			"command-line-flag": "--@id",
+			"name": "Cytomine software ID",
+			"set-by-server": true,
+			"optional": false,
+			"type": "Number"
+		},
+        {
+            "id": "images_to_predict",
+            "value-key": "[@ID]",
+            "command-line-flag": "--@id",
+            "name": "Images on which to apply the model",
+            "set-by-server": false,
+            "optional": false,
+            "type": "ListDomain",
+            "uri": "/api/project/$currentProject$/imageinstance.json",
+            "uri-print-attribute": "instanceFilename",
+            "uri-sort-attribute": "instanceFilename"
+        },
+        {
+            "id": "fish_type",
+            "value-key": "[@ID]",
+            "command-line-flag": "--@id",
+            "name": "Fish type",
+            "set-by-server": false,
+            "optional": false,
+            "type": "String",
+	    "values-choice":["zebrafish","medaka","seabream"]
+	    
+        },
+{
+            "id": "n_landmarks",
+            "value-key": "[@ID]",
+            "command-line-flag": "--@id",
+            "name": "Number of landmarks",
+            "set-by-server": false,
+            "optional": false,
+            "type": "Number"
+	    
+        },
+{
+            "id": "model_to_use",
+            "value-key": "[@ID]",
+            "command-line-flag": "--@id",
+            "name": "Model to use",
+            "set-by-server": false,
+            "optional": false,
+            "type": "String",
+	    "values-choice":["unet","hrnet","resnet50"]
+	    
+        },
+{
+            "id": "model_size",
+            "value-key": "[@ID]",
+            "command-line-flag": "--@id",
+            "name": "Model Size",
+            "set-by-server": false,
+            "optional": false,
+            "type": "Number",
+	    "default-value":256
+	    
+        }
+    ]
+}
