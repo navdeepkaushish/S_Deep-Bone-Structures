@@ -1,12 +1,12 @@
 {
-    "name": "Deep-Fish-Landmark-Prediction",
+    "name": "Deep-Zebrafish-Bone-Strucutre-Segementation",
     "container-image": {
-        "image": "navdeepkaushish/s_deep-fish-landmark-prediction",
+        "image": "navdeepkaushish/s_deep-zebrafish-bone-strcture-segmentation",
         "type": "singularity"
     },
-    "description": "Prediction phase of the Deep-fish Deep Learning approach",
+    "description": "Prediction phase of the Deep-bone Deep Learning approach",
     "schema-version": "cytomine-0.1",
-    "command-line": "python run.py [CYTOMINE_HOST] [CYTOMINE_PUBLIC_KEY] [CYTOMINE_PRIVATE_KEY] [CYTOMINE_ID_PROJECT] [CYTOMINE_ID_SOFTWARE] [IMAGES_TO_PREDICT] [FISH_TYPE] [N_LANDMARKS] [MODEL_TO_USE] [MODEL_SIZE]",
+    "command-line": "python run.py [CYTOMINE_HOST] [CYTOMINE_PUBLIC_KEY] [CYTOMINE_PRIVATE_KEY] [CYTOMINE_ID_PROJECT] [CYTOMINE_ID_SOFTWARE] [IMAGES_TO_PREDICT] [FISH_TYPE] [N_STRUCTURES] [MODEL_TO_USE]",
     "inputs": [
         {
         	"id": "cytomine_host",
@@ -73,14 +73,14 @@
             "set-by-server": false,
             "optional": false,
             "type": "String",
-	    "values-choice":["zebrafish","medaka","seabream"]
+	    "values-choice":["zebrafish"]
 	    
         },
 {
-            "id": "n_landmarks",
+            "id": "n_structures",
             "value-key": "[@ID]",
             "command-line-flag": "--@id",
-            "name": "Number of landmarks",
+            "name": "Number of structures",
             "set-by-server": false,
             "optional": false,
             "type": "Number"
@@ -94,19 +94,8 @@
             "set-by-server": false,
             "optional": false,
             "type": "String",
-	    "values-choice":["unet","hrnet","resnet50"]
+	    "values-choice":["unet"]
 	    
         },
-{
-            "id": "model_size",
-            "value-key": "[@ID]",
-            "command-line-flag": "--@id",
-            "name": "Model Size",
-            "set-by-server": false,
-            "optional": false,
-            "type": "Number",
-	    "default-value":256
-	    
-        }
     ]
 }
